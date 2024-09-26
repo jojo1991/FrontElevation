@@ -1,0 +1,387 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background: #333;
+    padding: 10px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+    background: #555;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Background Sections */
+.background-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.background-image {
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.background-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+p {
+    margin: 0.5em 0;
+}
+
+/* Slider */
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 60vh; /* Adjust this height as needed */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+
+/* Testimonials Window */
+.testimonials-window {
+    display: block; /* Hidden by default, shown via JavaScript */
+    position: fixed;
+    z-index: 1000;
+    top: 50px; /* Positions the window 20px from the top of the screen */
+    left: 20px; /* Positions the window 20px from the left of the screen */
+    width: 300px; /* Sets the width of the window */
+    height: auto; /* Adjusts the height based on content */
+    max-height: 400px; /* Optional: Set a maximum height if needed */
+    overflow: auto; /* Enables scrolling if content exceeds max-height */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 10px; /* Rounds the corners */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    padding: 20px; /* Adds padding inside the window */
+}
+
+/* Close Button for Testimonials Window */
+.testimonials-window .close-btn {
+    position: absolute;
+    top: 10px; /* Adjusted to fit the smaller window */
+    right: 10px; /* Adjusted to fit the smaller window */
+    color: #333; /* Changed to match the color scheme */
+    font-size: 20px; /* Adjusted for smaller window */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.testimonials-window .close-btn:hover,
+.testimonials-window .close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* Text Content Inside Testimonials Window */
+.testimonials-window p {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1;
+}
+
+footer .reviews-section {
+    display: flex;
+    justify-content: space-between; /* Align items to left and right */
+    align-items: flex-start; /* Align items to the top */
+    max-width: 1200px; /* Limit the width of the footer content */
+    margin: 0 auto; /* Center the footer content */
+    padding: 0 20px; /* Add some padding to the sides */
+}
+
+footer .contact-form, footer .contact-info {
+    width: 48%; /* Ensure both sections take up about half of the space */
+    margin-bottom: 20px;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 5px 0; /* Reduce vertical margins */
+}
+
+footer #social-media {
+    margin: 20px 0;
+}
+
+footer #social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+footer #social-media a:hover {
+    color: #007BFF;
+}
+
+footer p, footer a {
+    font-size: 14px; /* Reduce font size */
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    footer .reviews-section {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center;
+    }
+
+    footer .contact-form, footer .contact-info {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 20px;
+    }
+}
+
+/*about us page*/
+.about-container h1 {
+    text-align: left; /* Align text to the left */
+    margin: 0 auto; /* Center the h1 element within its container */
+    max-width: 600px; /* Set a maximum width for the h1 element */
+    padding: 20px 0; /* Add some padding for spacing */
+    border-bottom: 2px solid #333; /* Optional: Add a bottom border for emphasis */
+}
+
+.about-image-container .about-text h2 {
+    margin-bottom: 20px; /* Adds space below the h2 */
+    padding-bottom: 10px; /* Padding below the text */
+    border-bottom: 2px solid #333; /* Adds the line underneath the h2 */
+    max-width: 100%; /* Optional: you can set a specific width or leave it full-width */
+}
+
+.about-container p {
+    text-align: center; /* Centers the text within the paragraph */
+    margin: 20px 0; /* Optional: Adds some vertical spacing */
+    line-height: 1.6; /* Optional: Adjusts the line height for better readability */
+}
+
+.about-image-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns the image to the left */
+    width: 100%; /* Ensures the container takes up the full width of the screen */
+    padding-bottom: 100px;
+    justify-content: center;
+}
+
+.about-image-container .about-imagetwo {
+    width: 30%; /* Image takes up the left half of the screen */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.about-text {
+    padding-left: 100px;
+}
+
+/* Contact Us Page */
+.contactus-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.contactus-image-container {
+    position: relative; /* Allows the text to be positioned over the image */
+    width: 100%; /* Ensures the container takes up the full width */
+    margin-bottom: 20px; /* Adds space below the image */
+}
+
+.contactus-image {
+    width: 100%;
+    height: 300px; /* Adjusted height as per the earlier request */
+    object-fit: cover;
+}
+
+.contactus-text {
+    position: absolute; /* Positions the text over the image */
+    top: 50%; /* Moves the text 50% down the container */
+    left: 50%; /* Moves the text 50% from the left of the container */
+    transform: translate(-50%, -50%); /* Centers the text */
+    color: white; /* Text color */
+    font-size: 24px; /* Text size */
+    font-weight: bold; /* Makes the text bold */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow to make the text stand out */
+    border-bottom: 2px solid #faf7f7; /* Bottom border */
+    padding-bottom: 10px; /* Adjusts space between text and border */
+    width: 30%; /* Adjust this value to extend the border's length */
+    text-align: center; /* Ensures the text is centered within the border */
+}
+
+
+.contact-form-section {
+    max-width: 600px;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-section h1 {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+.contact-form-section label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form-section input,
+.contact-form-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.contact-form-section button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form-section button:hover {
+    background-color: #555;
+}
+
+/* Custom styles for the inspiration list links */
+.inspiration-list a {
+    color: blue;
+    text-decoration: none;
+}
+
+.inspiration-list a:hover {
+    color: yellow;
+}
